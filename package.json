@@ -1,8 +1,8 @@
 {
   "name": "sticky-notes",
-  "homepage": "https://mariela104.github.io/sticky-notes/",
+  "homepage": "https://marivalerio104.github.io/sticky-notes/",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

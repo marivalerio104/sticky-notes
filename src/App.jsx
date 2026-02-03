@@ -1,12 +1,20 @@
-import myNotes from './notes'
 import Header from './components/Header';
 import CreateArea from './components/CreateNote';
 import Note from './components/Note';
 import Footer from './components/Footer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function App() {
-  const [notes, setNotes] = useState(myNotes);
+  // Initialize notes from localStorage
+  const [notes, setNotes] = useState(() => {
+    const savedNotes = localStorage.getItem("notes");
+    return savedNotes ? JSON.parse(savedNotes) : [];
+  });
+
+  // Save notes to localStorage whenever notes state changes
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
   function handleAddNote(note) {
     setNotes(prevNotes => [...prevNotes, note])

@@ -8,7 +8,8 @@ form {
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   border: none;
   margin: 4px;
@@ -16,6 +17,14 @@ form input, form textarea {
   font-size: 1.2em;
   font-family: inherit;
   resize: none;
+}
+
+form input {
+  font-weight: 600;
+}
+
+form textarea {
+  font-size: 1.1em;
 }
 
 form button {
@@ -30,5 +39,12 @@ form button {
   height: 38px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  /* outline: none; */
+}
+
+form button:hover {
+  background: #009e89;
+}
+
+form button:active {
+  background: #00d0b5;
 }

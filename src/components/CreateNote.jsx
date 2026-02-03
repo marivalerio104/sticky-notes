@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import '../styles/CreateNote.css'
 
-export default function CreateArea({ insertNote }) {
+export default function CreateArea({ handleAddNote }) {
   const [note, setNote] = useState({ title: "", content: "" });
 
   function handleChange(event) {
-    const name = event.target.name;
-    const value = event.target.value;
+    const { name, value } = event.target;
     setNote(prevNote => ({ ...prevNote, [name]: value }))
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    insertNote(note.title, note.content);
-    setNote({ title: "", content: "" })
+
+    if (note.title || note.content) {
+      handleAddNote(note);
+      setNote({ title: "", content: "" })
+    }
   }
 
   return (

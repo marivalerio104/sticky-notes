@@ -19,3 +19,16 @@
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+.note button {
+  /* position: relative; */
+  float: right;
+  margin-top: 10px;
+  color: #00c0a6;
+  border: none;
+  /* width: 36px; */
+  /* height: 36px; */
+  cursor: pointer;
+  /* outline: none; */
+  background-color: inherit;
+}

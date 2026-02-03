@@ -19,12 +19,16 @@ export default function App() {
     })
   }
 
+  function deleteNote(key) {
+    setNotes(prevNotes => prevNotes.filter(note => note.key != key))
+  }
+
   return (
     <>
       <Header />
       <CreateNote insertNote={insertNote} />
       <div>{notes.map(note =>
-        <Note
+        <Note key={note.key} deleteNote={deleteNote}
           title={note.title} content={note.content}
         />
       )}</div>
